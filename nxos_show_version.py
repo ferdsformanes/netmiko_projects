@@ -1,19 +1,18 @@
 from netmiko import ConnectHandler
 
-# Device details (NX-OS)
+# dictionary (key:value pairs) with device details
 device = {
-    "device_type": "cisco_nxos",
+    "device_type": "cisco_nxos",    
     "host": "sbx-nxos-mgmt.cisco.com",
     "username": "admin",
     "password": "Admin_1234!",
 }
 
-# Connect to the device
+# create SSH connection object (** unpacks dictionary into arguments)
 connection = ConnectHandler(**device)
 
-# Run "show version"
+# run command by calling send_command() with a string 
 output = connection.send_command("show version")
-print(output)
+print(output)  # print command output
 
-# Disconnect
-connection.disconnect()
+connection.disconnect()  # close connection
