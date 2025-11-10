@@ -20,11 +20,12 @@ devices = [
 # list to store all results
 all_outputs = []
 
-# simple for loop
+
 for dev in devices:
-    conn = ConnectHandler(**dev)  # connect to device
-    output = conn.send_command("show inventory", use_textfsm=True)  # parse command output
-    conn.disconnect()  # always disconnect after use
+    conn = ConnectHandler(**dev)  
+    output = conn.send_command("show inventory", use_textfsm=True)  
+    print(output)
+    conn.disconnect() 
     
     # Add device hostname and inventory data
     for item in output:
