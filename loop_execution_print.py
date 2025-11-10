@@ -28,3 +28,5 @@ for dev in devices:
         item["device"] = dev["host"]
         all_outputs.append(item)
 
+print("\n✅ Done! All devices processed.")
+print(f"Total items collected: {len(all_outputs)}")
