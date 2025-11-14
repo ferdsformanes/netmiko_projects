@@ -1,4 +1,7 @@
+# Automate Cisco Device Inventory with Python (Netmiko + TextFSM + Pandas)
+
 from netmiko import ConnectHandler
+import pandas as pd
 
 devices = [
     {
@@ -24,9 +27,13 @@ for dev in devices:
     conn.disconnect()
 
     for item in output:
+        print(type(item))
         print(f"   [INNER LOOP] Item: {item.get('name', 'unknown')} from {dev['host']}")
         item["device"] = dev["host"]
         all_outputs.append(item)
 
-print("\n✅ Done! All devices processed.")
 print(f"Total items collected: {len(all_outputs)}")
+# convert to DataFrame and save
+df = pd.DataFrame(all_outputs)
+# print(df)
+df.to_excel("device_inventory.xlsx", index=False)
