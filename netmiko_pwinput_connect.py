@@ -22,7 +22,10 @@ df.to_excel("show_version.xlsx", index=False)
 
 net_connect.disconnect()
 
+# "username": "admin",
+# "password": "C1sco12345",
 
 # Reference: https://pypi.org/project/pwinput/
+
 
 
