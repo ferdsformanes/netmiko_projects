@@ -4,8 +4,8 @@ import pandas as pd
 
 
 username = input("Enter your username: ")
-password = pwinput("Enter your password: ", mask='*')
-
+# password = pwinput("Enter your password: ", mask='*')
+password = pwinput.pwinput(prompt="Enter your password: ")
 device = {
     "device_type": "cisco_xr",
     "host": "sandbox-iosxr-1.cisco.com",
@@ -24,3 +24,4 @@ net_connect.disconnect()
 
 
 # Reference: https://pypi.org/project/pwinput/
+
