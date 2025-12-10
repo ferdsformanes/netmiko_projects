@@ -11,6 +11,7 @@ device = {
 
 # Create SSHDetect object
 guesser = SSHDetect(**device)
+print("Detecting device type... please wait.") 
 best_match = guesser.autodetect()
 
 # If auto-detection returned a valid device type, run the block below
